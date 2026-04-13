@@ -4,14 +4,18 @@
 \alias{calcul_distribution_semaine}
 \title{Calculer la distribution des trajets par jour de la semaine}
 \usage{
-calcul_distribution_semaine(trajet)
+calcul_distribution_semaine(trajet, filtre = TRUE)
 }
 \arguments{
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
+
+\item{filtre}{Un booléen. Si TRUE, les anomalies sont filtrées
+avant le calcul. Par défaut TRUE.}
 }
 \value{
 Un data.frame avec le jour de la semaine et le nombre de trajets.
 }
 \description{
 Compte la somme des trajets pour chaque jour de la semaine.
+Possibilité de filtrer les anomalies avant le calcul.
 }

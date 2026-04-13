@@ -85,24 +85,33 @@ trouver_trajet_max <- function(trajet) {
 #' Calculer la distribution des trajets par jour de la semaine
 #'
 #' Compte la somme des trajets pour chaque jour de la semaine.
+#' Possibilité de filtrer les anomalies avant le calcul.
 #'
 #' @param trajet Un data.frame respectant le schéma de df_velo.
+#' @param filtre Un booléen. Si TRUE, les anomalies sont filtrées
+#'   avant le calcul. Par défaut TRUE.
 #'
 #' @return Un data.frame avec le jour de la semaine et le nombre de trajets.
 #' @export
 #'
 #' @importFrom dplyr count
-calcul_distribution_semaine <- function(trajet) {
+#' @importFrom rlang .data
+calcul_distribution_semaine <- function(trajet, filtre = TRUE) {
+  if (filtre) {
+    trajet <- filtre_anomalie(trajet)
+  }
   trajet |>
-    dplyr::count(`Jour de la semaine`, wt = Total, sort = TRUE, name = "trajets")
+    dplyr::count(.data[["Jour de la semaine"]], wt = .data[["Total"]], sort = TRUE, name = "trajets")
 }
 
 #' Afficher la distribution des trajets par jour de la semaine
 #'
-#' Produit un diagramme en colonnes montrant le nombre de trajets
-#' pour chaque jour de la semaine, après filtrage des anomalies.
+#' Produit un diagramme en colonnes. Possibilité de filtrer
+#' les anomalies avant le calcul.
 #'
 #' @param trajet Un data.frame respectant le schéma de df_velo.
+#' @param filtre Un booléen. Si TRUE, les anomalies sont filtrées
+#'   avant le calcul. Par défaut TRUE.
 #'
 #' @return Un objet ggplot.
 #' @export
@@ -110,13 +119,12 @@ calcul_distribution_semaine <- function(trajet) {
 #' @importFrom ggplot2 ggplot aes geom_col
 #' @importFrom forcats fct_recode
 #' @importFrom dplyr mutate
-plot_distribution_semaine <- function(trajet) {
-  trajet_weekday <- trajet |>
-    filtre_anomalie() |>
-    calcul_distribution_semaine() |>
+#' @importFrom rlang .data
+plot_distribution_semaine <- function(trajet, filtre = TRUE) {
+  trajet_weekday <- calcul_distribution_semaine(trajet, filtre = filtre) |>
     dplyr::mutate(
       jour = forcats::fct_recode(
-        factor(`Jour de la semaine`),
+        factor(.data[["Jour de la semaine"]]),
         "lundi" = "1",
         "mardi" = "2",
         "mercredi" = "3",
@@ -128,7 +136,7 @@ plot_distribution_semaine <- function(trajet) {
     )
 
   ggplot2::ggplot(trajet_weekday) +
-    ggplot2::aes(x = jour, y = trajets) +
+    ggplot2::aes(x = .data[["jour"]], y = .data[["trajets"]]) +
     ggplot2::geom_col()
 }
 
