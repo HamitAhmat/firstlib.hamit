@@ -4,15 +4,18 @@
 \alias{plot_distribution_semaine}
 \title{Afficher la distribution des trajets par jour de la semaine}
 \usage{
-plot_distribution_semaine(trajet)
+plot_distribution_semaine(trajet, filtre = TRUE)
 }
 \arguments{
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
+
+\item{filtre}{Un booléen. Si TRUE, les anomalies sont filtrées
+avant le calcul. Par défaut TRUE.}
 }
 \value{
 Un objet ggplot.
 }
 \description{
-Produit un diagramme en colonnes montrant le nombre de trajets
-pour chaque jour de la semaine, après filtrage des anomalies.
+Produit un diagramme en colonnes. Possibilité de filtrer
+les anomalies avant le calcul.
 }
