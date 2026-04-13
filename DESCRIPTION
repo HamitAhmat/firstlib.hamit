@@ -12,4 +12,8 @@ RoxygenNote: 7.3.3
 Imports: 
     dplyr,
     forcats,
-    ggplot2
+    ggplot2,
+    rlang
+Depends: 
+    R (>= 3.5)
+LazyData: true
