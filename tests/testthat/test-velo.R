@@ -60,3 +60,12 @@ test_that("filtrer_trajet avec une seule boucle", {
 
   expect_true(all(resultat[["Numéro de boucle"]] == 949))
 })
+
+
+
+
+test_that("filtrer_trajet retourne tout si boucle est NULL", {
+  resultat <- filtrer_trajet(df_velo, boucle = NULL)
+
+  expect_equal(nrow(resultat), nrow(df_velo))
+})

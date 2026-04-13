@@ -9,15 +9,18 @@ filtrer_trajet(trajet, boucle)
 \arguments{
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
 
-\item{boucle}{Un vecteur de numéros de boucle à conserver.}
+\item{boucle}{Un vecteur de numéros de boucle à conserver. Si NULL,
+aucun filtrage n'est appliqué.}
 }
 \value{
 Un data.frame filtré contenant uniquement les boucles demandées.
 }
 \description{
 Filtre un data.frame pour ne garder que les boucles sélectionnées.
+Si boucle est NULL, retourne le data.frame complet sans filtrage.
 }
 \examples{
 filtrer_trajet(trajet = df_velo, boucle = c("880", "881"))
+filtrer_trajet(trajet = df_velo, boucle = NULL)
 
 }
