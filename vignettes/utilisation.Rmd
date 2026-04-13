@@ -1,0 +1,75 @@
+---
+title: "Utilisation de firstlib"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Utilisation de firstlib}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+Ce document montre comment utiliser les fonctions du package `firstlib`
+pour filtrer des données vélo et produire un graphique de distribution
+par jour de la semaine.
+
+## Chargement du package et des données
+
+```{r}
+library(firstlib.hamit)
+data(df_velo)
+```
+
+## Filtrer sur une ou plusieurs boucles
+
+On sélectionne les boucles 880 et 881 avec la fonction `filtrer_trajet()` :
+
+```{r}
+df_selection <- filtrer_trajet(trajet = df_velo, boucle = c(880, 881))
+df_selection
+```
+
+## Filtrer les anomalies
+
+On nettoie les données en supprimant les anomalies :
+
+```{r}
+df_propre <- filtre_anomalie(df_selection)
+df_propre
+```
+
+## Compter les trajets
+
+On peut compter le nombre total de trajets :
+
+```{r}
+compter_nombre_trajets(df_propre)
+```
+
+## Compter les boucles distinctes
+
+```{r}
+compter_nombre_boucle(df_propre)
+```
+
+## Trouver le trajet avec le plus de passages
+
+```{r}
+trouver_trajet_max(df_selection)
+```
+
+## Distribution par jour de la semaine
+
+On calcule la distribution :
+
+```{r}
+calcul_distribution_semaine(df_propre)
+```
+
+## Graphique de la distribution
+
+On affiche le diagramme en colonnes :
+
+```{r, fig.width=7, fig.height=4}
+plot_distribution_semaine(df_selection)
+```
