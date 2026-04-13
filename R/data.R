@@ -1,0 +1,21 @@
+#' Données de comptages vélo Nantes Métropole
+#'
+#' Jeu de données contenant les comptages vélo de Nantes Métropole
+#' pendant les vacances de Toussaint 2025. Contient 960 observations
+#' et 32 variables.
+#'
+#' @format Un tibble avec 960 lignes et 32 colonnes :
+#' \describe{
+#'   \item{Numéro de boucle}{Identifiant numérique de la boucle de comptage}
+#'   \item{Jour}{Date du comptage (format Date)}
+#'   \item{00, 01, ..., 23}{Nombre de passages pour chaque heure de la journée (de 00h à 23h)}
+#'   \item{Total}{Nombre total de passages sur la journée}
+#'   \item{Probabilité de présence d'anomalies}{Indicateur d'anomalie (Forte, Faible ou NA)}
+#'   \item{Jour de la semaine}{Numéro du jour (1 = lundi, 7 = dimanche)}
+#'   \item{Boucle de comptage}{Nom de la boucle de comptage}
+#'   \item{Date formatée}{Date formatée (format Date)}
+#'   \item{Vacances}{Période de vacances correspondante}
+#' }
+#'
+#' @source \url{https://data.nantesmetropole.fr/}
+"df_velo"
