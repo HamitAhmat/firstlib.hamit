@@ -10,9 +10,8 @@ filtre_anomalie(trajet)
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
 }
 \value{
-Un data.frame nettoyé sans les anomalies.
+Un data.frame nettoyé.
 }
 \description{
-Supprime les lignes contenant des anomalies (Forte ou Faible),
-ainsi que les valeurs aberrantes (Total > 10000 ou Total <= 0).
+Supprime les lignes contenant des anomalies et les valeurs aberrantes.
 }

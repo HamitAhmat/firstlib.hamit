@@ -10,11 +10,8 @@ trouver_trajet_max(trajet)
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
 }
 \value{
-Un data.frame avec le nom de la boucle, le jour, le total,
-la moyenne par jour et la moyenne par boucle.
+Un data.frame avec les infos du trajet max.
 }
 \description{
-Identifie la paire boucle-jour ayant le plus grand nombre de passages,
-après filtrage des anomalies. Retourne aussi la moyenne par jour
-et la moyenne par boucle.
+Trouver le trajet avec le maximum de passages
 }

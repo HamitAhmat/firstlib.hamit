@@ -10,8 +10,8 @@ compter_nombre_boucle(trajet)
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
 }
 \value{
-Un entier représentant le nombre de boucles distinctes.
+Un entier représentant le nombre de boucles.
 }
 \description{
-Compte le nombre de boucles de comptage uniques dans le jeu de données.
+Compter le nombre de boucles distinctes
 }

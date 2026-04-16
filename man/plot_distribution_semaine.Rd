@@ -9,13 +9,11 @@ plot_distribution_semaine(trajet, filtre = TRUE)
 \arguments{
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
 
-\item{filtre}{Un booléen. Si TRUE, les anomalies sont filtrées
-avant le calcul. Par défaut TRUE.}
+\item{filtre}{Booléen, TRUE par défaut.}
 }
 \value{
 Un objet ggplot.
 }
 \description{
-Produit un diagramme en colonnes. Possibilité de filtrer
-les anomalies avant le calcul.
+Afficher la distribution des trajets par jour de la semaine
 }

@@ -13,5 +13,5 @@ compter_nombre_trajets(trajet)
 Un nombre représentant le total des trajets.
 }
 \description{
-Calcule la somme de la colonne Total.
+Compter le nombre total de trajets
 }

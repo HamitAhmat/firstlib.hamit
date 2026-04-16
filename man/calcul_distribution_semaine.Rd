@@ -9,13 +9,11 @@ calcul_distribution_semaine(trajet, filtre = TRUE)
 \arguments{
 \item{trajet}{Un data.frame respectant le schéma de df_velo.}
 
-\item{filtre}{Un booléen. Si TRUE, les anomalies sont filtrées
-avant le calcul. Par défaut TRUE.}
+\item{filtre}{Booléen, TRUE par défaut.}
 }
 \value{
-Un data.frame avec le jour de la semaine et le nombre de trajets.
+Un data.frame avec la distribution.
 }
 \description{
-Compte la somme des trajets pour chaque jour de la semaine.
-Possibilité de filtrer les anomalies avant le calcul.
+Calculer la distribution des trajets par jour de la semaine
 }
