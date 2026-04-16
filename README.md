@@ -17,7 +17,7 @@ remotes::install_github("HamitAhmat/firstlib.hamit")
 ## Utilisation
 
 ```r
-library(firstlib)
+library(firstlib.hamit)
 
 # Filtrer sur des boucles
 df_selection <- filtrer_trajet(df_velo, boucle = c(880, 881))
