@@ -11,7 +11,7 @@ vélo de Nantes Métropole (vacances de Toussaint 2025).
 ## Installation
 
 ```r
-remotes::install_github("HamitAhmat/firstlib")
+remotes::install_github("HamitAhmat/firstlib.hamit")
 ```
 
 ## Utilisation
