@@ -1,6 +1,6 @@
 Package: firstlib.hamit
 Title: Mon Premier Package R pour velo
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Hamit", "Ahmat Hamit", , "hamitahmat75@gmail.com", role = c("aut", "cre"))
 Description: Un premier package R créé dans le cadre du cours r-avancer et github.
